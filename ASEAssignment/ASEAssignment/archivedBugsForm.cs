@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace ASEAssignment
 {
-    public partial class whiteBoxTesterForm : Form
+    public partial class archivedBugsForm : Form
     {
-        public whiteBoxTesterForm()
+        public archivedBugsForm()
         {
             InitializeComponent();
         }

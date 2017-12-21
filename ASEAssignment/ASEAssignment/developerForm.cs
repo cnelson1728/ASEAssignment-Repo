@@ -16,5 +16,12 @@ namespace ASEAssignment
         {
             InitializeComponent();
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            mainMenu MM = new mainMenu();
+            MM.ShowDialog();
+        }
     }
 }

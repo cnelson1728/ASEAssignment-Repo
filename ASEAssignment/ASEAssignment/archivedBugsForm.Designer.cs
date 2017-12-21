@@ -1,6 +1,6 @@
 ﻿namespace ASEAssignment
 {
-    partial class developerForm
+    partial class archivedBugsForm
     {
         /// <summary>
         /// Required designer variable.
@@ -36,19 +36,19 @@
             this.button6.Location = new System.Drawing.Point(12, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 23);
-            this.button6.TabIndex = 24;
+            this.button6.TabIndex = 25;
             this.button6.Text = "Main Menu";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // developerForm
+            // archivedBugsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(613, 528);
+            this.ClientSize = new System.Drawing.Size(522, 442);
             this.Controls.Add(this.button6);
-            this.Name = "developerForm";
-            this.Text = "developerForm";
+            this.Name = "archivedBugsForm";
+            this.Text = "archivedBugsForm";
             this.ResumeLayout(false);
 
         }
