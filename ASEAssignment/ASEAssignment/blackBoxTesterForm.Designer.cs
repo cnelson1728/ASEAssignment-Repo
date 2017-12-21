@@ -47,6 +47,7 @@
             this.bugSubmitButton.TabIndex = 0;
             this.bugSubmitButton.Text = "Submit Bug";
             this.bugSubmitButton.UseVisualStyleBackColor = true;
+            this.bugSubmitButton.Click += new System.EventHandler(this.bugSubmitButton_Click);
             // 
             // appNameTextBox
             // 

@@ -196,6 +196,7 @@
             this.displayBugsButton.TabIndex = 16;
             this.displayBugsButton.Text = "Display Bugs";
             this.displayBugsButton.UseVisualStyleBackColor = true;
+            this.displayBugsButton.Click += new System.EventHandler(this.displayBugsButton_Click);
             // 
             // clearBugsButton
             // 
@@ -205,6 +206,7 @@
             this.clearBugsButton.TabIndex = 17;
             this.clearBugsButton.Text = "Clear Bugs";
             this.clearBugsButton.UseVisualStyleBackColor = true;
+            this.clearBugsButton.Click += new System.EventHandler(this.clearBugsButton_Click);
             // 
             // clearBugButton
             // 
@@ -214,6 +216,7 @@
             this.clearBugButton.TabIndex = 18;
             this.clearBugButton.Text = "Clear Bug";
             this.clearBugButton.UseVisualStyleBackColor = true;
+            this.clearBugButton.Click += new System.EventHandler(this.clearBugButton_Click);
             // 
             // updateBugButton
             // 
@@ -223,6 +226,7 @@
             this.updateBugButton.TabIndex = 19;
             this.updateBugButton.Text = "Update Bug";
             this.updateBugButton.UseVisualStyleBackColor = true;
+            this.updateBugButton.Click += new System.EventHandler(this.updateBugButton_Click);
             // 
             // pullBugButton
             // 
