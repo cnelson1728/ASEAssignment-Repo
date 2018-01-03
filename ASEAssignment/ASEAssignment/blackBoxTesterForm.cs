@@ -26,7 +26,7 @@ namespace ASEAssignment
         }
         public void insertRecord(String appName, String symptom, String cause, String commandString)
         {
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\c3418895\Documents\bugTrackingDatabase.mdf;Integrated Security = True; Connect Timeout = 30; MultipleActiveResultSets=true");
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
             connection.Open();            
             SqlCommand command = new SqlCommand(commandString, connection);
             command.Parameters.AddWithValue("@appName", appName);
@@ -44,6 +44,10 @@ namespace ASEAssignment
         {
             string commandString = "INSERT INTO bugTrackingTable (appName, symptom, cause) Values (@appName, @symptom, @cause)";
             insertRecord(appNameTextBox.Text, symptomTextBox.Text, causeOfBugTextBox.Text, commandString);
+            appNameTextBox.Text = String.Empty;
+            causeOfBugTextBox.Text = String.Empty;
+            symptomTextBox.Text = String.Empty;
+            MessageBox.Show("Bug submitted successfully.");
 
         }
     }

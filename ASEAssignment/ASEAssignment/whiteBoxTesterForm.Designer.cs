@@ -236,6 +236,7 @@
             this.pullBugButton.TabIndex = 20;
             this.pullBugButton.Text = "Pull Bug Record";
             this.pullBugButton.UseVisualStyleBackColor = true;
+            this.pullBugButton.Click += new System.EventHandler(this.pullBugButton_Click);
             // 
             // bugIDtextBox
             // 
