@@ -33,10 +33,6 @@ namespace ASEAssignment
             command.Parameters.AddWithValue("@symptom", symptom);
             command.Parameters.AddWithValue("@cause", cause);
             command.ExecuteNonQuery();
-            //command.Parameters.AddWithValue("@classFile", classFile);
-           // command.Parameters.AddWithValue("@method", method);
-           // command.Parameters.AddWithValue("@codeBlock", codeBlock);
-           // command.Parameters.AddWithValue("@lineNumber", lineNumber);
             
         }
    

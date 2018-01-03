@@ -25,7 +25,7 @@ namespace ASEAssignment
             MM.ShowDialog();
         }
 
-        public void updateRecord(String classFile, String method, String codeBlock, int lineNumber, String commandString)
+        public void updateRecord(String classFile, String method, String codeBlock, int lineNumber, String codeAuthor, String commandString)
         {
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
             connection.Open();
@@ -35,16 +35,15 @@ namespace ASEAssignment
             command.Parameters.AddWithValue("@method", method);
             command.Parameters.AddWithValue("@codeBlock", codeBlock);
             command.Parameters.AddWithValue("@lineNumber", lineNumber);
-
-            command.ExecuteNonQuery();
-            
+            command.Parameters.AddWithValue("@codeAuthor", codeAuthor);
+            command.ExecuteNonQuery();       
 
         }
 
         private void updateBugButton_Click(object sender, EventArgs e)
         {
-            string commandString = "UPDATE bugTrackingTable SET classFile = @classFile,  method = @method, codeBlock = @codeBlock, lineNumber = @lineNumber WHERE id=" + bugIDtextBox.Text;
-            updateRecord(classFileTextBox.Text, methodTextBox.Text, codeBlockTextBox.Text, Int32.Parse(lineNumberTextBox.Text), commandString);
+            string commandString = "UPDATE bugTrackingTable SET classFile = @classFile,  method = @method, codeBlock = @codeBlock, lineNumber = @lineNumber, codeAuthor = @codeAuthor WHERE id=" + bugIDtextBox.Text;
+            updateRecord(classFileTextBox.Text, methodTextBox.Text, codeBlockTextBox.Text, Int32.Parse(lineNumberTextBox.Text), codeAuthorTextBox.Text, commandString);
             MessageBox.Show("Bug updated successfully.");
         }
 
@@ -83,6 +82,7 @@ namespace ASEAssignment
             methodTextBox.Text = String.Empty;
             codeBlockTextBox.Text = String.Empty;
             lineNumberTextBox.Text = String.Empty;
+            codeAuthorTextBox.Text = String.Empty;
         }
 
         private void pullBugButton_Click(object sender, EventArgs e)
@@ -100,6 +100,11 @@ namespace ASEAssignment
                 appNameTextBox.Text = (mySqlDataReader["appName"].ToString());
                 bugDescriptionTextBox.Text = (mySqlDataReader["symptom"].ToString());
                 bugCauseTextBox.Text = (mySqlDataReader["cause"].ToString());
+                classFileTextBox.Text = (mySqlDataReader["classFile"].ToString());
+                methodTextBox.Text = (mySqlDataReader["method"].ToString());
+                codeBlockTextBox.Text = (mySqlDataReader["codeBlock"].ToString());
+                lineNumberTextBox.Text = (mySqlDataReader["lineNumber"].ToString());
+                codeAuthorTextBox.Text = (mySqlDataReader["codeAuthor"].ToString());
             }
 
         }

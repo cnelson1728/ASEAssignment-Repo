@@ -52,6 +52,8 @@
             this.bugIDtextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.mainMenuButton = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.codeAuthorTextBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -68,7 +70,7 @@
             this.bugListBox.FormattingEnabled = true;
             this.bugListBox.Location = new System.Drawing.Point(374, 114);
             this.bugListBox.Name = "bugListBox";
-            this.bugListBox.Size = new System.Drawing.Size(285, 342);
+            this.bugListBox.Size = new System.Drawing.Size(285, 368);
             this.bugListBox.TabIndex = 1;
             // 
             // appNameTextBox
@@ -200,7 +202,7 @@
             // 
             // clearBugsButton
             // 
-            this.clearBugsButton.Location = new System.Drawing.Point(451, 462);
+            this.clearBugsButton.Location = new System.Drawing.Point(451, 496);
             this.clearBugsButton.Name = "clearBugsButton";
             this.clearBugsButton.Size = new System.Drawing.Size(124, 34);
             this.clearBugsButton.TabIndex = 17;
@@ -210,7 +212,7 @@
             // 
             // clearBugButton
             // 
-            this.clearBugButton.Location = new System.Drawing.Point(142, 462);
+            this.clearBugButton.Location = new System.Drawing.Point(142, 496);
             this.clearBugButton.Name = "clearBugButton";
             this.clearBugButton.Size = new System.Drawing.Size(93, 34);
             this.clearBugButton.TabIndex = 18;
@@ -220,7 +222,7 @@
             // 
             // updateBugButton
             // 
-            this.updateBugButton.Location = new System.Drawing.Point(262, 462);
+            this.updateBugButton.Location = new System.Drawing.Point(262, 496);
             this.updateBugButton.Name = "updateBugButton";
             this.updateBugButton.Size = new System.Drawing.Size(101, 34);
             this.updateBugButton.TabIndex = 19;
@@ -230,11 +232,11 @@
             // 
             // pullBugButton
             // 
-            this.pullBugButton.Location = new System.Drawing.Point(252, 78);
+            this.pullBugButton.Location = new System.Drawing.Point(241, 78);
             this.pullBugButton.Name = "pullBugButton";
             this.pullBugButton.Size = new System.Drawing.Size(111, 23);
             this.pullBugButton.TabIndex = 20;
-            this.pullBugButton.Text = "Pull Bug Record";
+            this.pullBugButton.Text = "Display Bug";
             this.pullBugButton.UseVisualStyleBackColor = true;
             this.pullBugButton.Click += new System.EventHandler(this.pullBugButton_Click);
             // 
@@ -264,11 +266,29 @@
             this.mainMenuButton.UseVisualStyleBackColor = true;
             this.mainMenuButton.Click += new System.EventHandler(this.button6_Click);
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(71, 470);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(66, 13);
+            this.label10.TabIndex = 24;
+            this.label10.Text = "Code Author";
+            // 
+            // codeAuthorTextBox
+            // 
+            this.codeAuthorTextBox.Location = new System.Drawing.Point(142, 466);
+            this.codeAuthorTextBox.Name = "codeAuthorTextBox";
+            this.codeAuthorTextBox.Size = new System.Drawing.Size(221, 20);
+            this.codeAuthorTextBox.TabIndex = 25;
+            // 
             // whiteBoxTesterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(671, 560);
+            this.Controls.Add(this.codeAuthorTextBox);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.bugIDtextBox);
@@ -326,5 +346,7 @@
         private System.Windows.Forms.TextBox bugIDtextBox;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Button mainMenuButton;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox codeAuthorTextBox;
     }
 }
