@@ -20,12 +20,22 @@ namespace ASEAssignment
 
         private void button6_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             mainMenu MM = new mainMenu();
             MM.ShowDialog();
+
         }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="appName"></param>
+        /// <param name="symptom"></param>
+        /// <param name="cause"></param>
+        /// <param name="commandString"></param>
         public void insertRecord(String appName, String symptom, String cause, String commandString)
         {
+
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
             connection.Open();            
             SqlCommand command = new SqlCommand(commandString, connection);
@@ -35,16 +45,31 @@ namespace ASEAssignment
             command.ExecuteNonQuery();
             
         }
-   
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void bugSubmitButton_Click(object sender, EventArgs e)
         {
-            string commandString = "INSERT INTO bugTrackingTable (appName, symptom, cause) Values (@appName, @symptom, @cause)";
-            insertRecord(appNameTextBox.Text, symptomTextBox.Text, causeOfBugTextBox.Text, commandString);
-            appNameTextBox.Text = String.Empty;
-            causeOfBugTextBox.Text = String.Empty;
-            symptomTextBox.Text = String.Empty;
-            MessageBox.Show("Bug submitted successfully.");
+            if (appNameTextBox.Text != String.Empty && causeOfBugTextBox.Text != String.Empty && symptomTextBox.Text != String.Empty)
+            {
 
+                string commandString = "INSERT INTO bugTrackingTable (appName, symptom, cause) Values (@appName, @symptom, @cause)";
+                insertRecord(appNameTextBox.Text, symptomTextBox.Text, causeOfBugTextBox.Text, commandString);
+                appNameTextBox.Text = String.Empty;
+                causeOfBugTextBox.Text = String.Empty;
+                symptomTextBox.Text = String.Empty;
+                MessageBox.Show("Bug submitted successfully.");
+
+            }
+            else
+            {
+
+                MessageBox.Show("Please fill out all fields.");
+
+            }
         }
     }
 }

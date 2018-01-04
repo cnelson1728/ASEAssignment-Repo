@@ -28,6 +28,11 @@ namespace ASEAssignment
             MM.ShowDialog();
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void displayArchivedBugsButton_Click(object sender, EventArgs e)
         {
             archivedBugsListBox.Items.Clear();
@@ -49,59 +54,108 @@ namespace ASEAssignment
                 archivedBugsListBox.Items.Add("Code Block: " + myDataReader["codeBlock"].ToString());
                 archivedBugsListBox.Items.Add("Line Number: " + myDataReader["lineNumber"].ToString());
                 archivedBugsListBox.Items.Add("Code Author: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("Fixer Name: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("Fix Date: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("Fixer Comment: " + myDataReader["codeAuthor"].ToString());
+                archivedBugsListBox.Items.Add("Fixer Name: " + myDataReader["fixerName"].ToString());
+                archivedBugsListBox.Items.Add("Fix Date: " + myDataReader["fixDate"].ToString());
+                archivedBugsListBox.Items.Add("Fixer Comment: " + myDataReader["fixerComment"].ToString());
                 archivedBugsListBox.Items.Add("");
 
             }
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void deleteBugButton_Click(object sender, EventArgs e)
         {
-            String connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+            displaySourceCode.Text = String.Empty;
 
-            String deleteQuery = "DELETE FROM archivedBugsTable WHERE id=" + deleteBugID.Text;            
-
-            using (SqlConnection mySqlConnection = new SqlConnection(connection))
+            try
             {
-                mySqlConnection.Open();
-                using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, mySqlConnection))
+                String connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+
+
+                if (deleteBugID.Text != String.Empty && archivedBugsListBox.Items.Contains("Application ID: " + deleteBugID.Text))
                 {
 
+                    String deleteQuery = "DELETE FROM archivedBugsTable WHERE id=" + deleteBugID.Text;
 
-                    deleteCommand.ExecuteNonQuery();
-                    mySqlConnection.Close();
-                    MessageBox.Show("Bug deleted successfully");
-                    deleteBugID.Text = String.Empty;
-                    
+                    using (SqlConnection mySqlConnection = new SqlConnection(connection))
+                    {
+                        mySqlConnection.Open();
+                        using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, mySqlConnection))
+                        {
 
+                            deleteCommand.ExecuteNonQuery();
+                            mySqlConnection.Close();
+                            MessageBox.Show("Bug deleted successfully");
+                            deleteBugID.Text = String.Empty;
+
+                        }
+                    }
+                    String displayQuery = "SELECT * FROM archivedBugsTable";
+                    archivedBugsListBox.Items.Clear();
+                    SqlConnection myConnection = new SqlConnection(connection);
+                    SqlCommand displayCommand = new SqlCommand(displayQuery, myConnection);
+                    myConnection.Open();
+                    SqlDataReader myDataReader = displayCommand.ExecuteReader();
+
+                    while (myDataReader.Read())
+                    {
+
+                        archivedBugsListBox.Items.Add("Application ID: " + myDataReader["ID"].ToString());
+                        archivedBugsListBox.Items.Add("Application Name: " + myDataReader["appName"].ToString());
+                        archivedBugsListBox.Items.Add("Bug Description: " + myDataReader["symptom"].ToString());
+                        archivedBugsListBox.Items.Add("Bug Cause: " + myDataReader["cause"].ToString());
+                        archivedBugsListBox.Items.Add("Class File: " + myDataReader["classFile"].ToString());
+                        archivedBugsListBox.Items.Add("Method: " + myDataReader["method"].ToString());
+                        archivedBugsListBox.Items.Add("Code Block: " + myDataReader["codeBlock"].ToString());
+                        archivedBugsListBox.Items.Add("Line Number: " + myDataReader["lineNumber"].ToString());
+                        archivedBugsListBox.Items.Add("Code Author: " + myDataReader["codeAuthor"].ToString());
+                        archivedBugsListBox.Items.Add("Fixer Name: " + myDataReader["codeAuthor"].ToString());
+                        archivedBugsListBox.Items.Add("Fix Date: " + myDataReader["codeAuthor"].ToString());
+                        archivedBugsListBox.Items.Add("Fixer Comment: " + myDataReader["codeAuthor"].ToString());
+                        archivedBugsListBox.Items.Add("");
+
+                    }
                 }
+                else
+                {
+
+                    MessageBox.Show("Please enter a valid Bug ID.");
+
+                }                
             }
-
-            String displayQuery = "SELECT * FROM archivedBugsTable";
-            archivedBugsListBox.Items.Clear();
-            SqlConnection myConnection = new SqlConnection(connection);
-            SqlCommand displayCommand = new SqlCommand(displayQuery, myConnection);
-            myConnection.Open();
-            SqlDataReader myDataReader = displayCommand.ExecuteReader();
-
-            while (myDataReader.Read())
+            catch(Exception exception)
             {
 
-                archivedBugsListBox.Items.Add("Application ID: " + myDataReader["ID"].ToString());
-                archivedBugsListBox.Items.Add("Application Name: " + myDataReader["appName"].ToString());
-                archivedBugsListBox.Items.Add("Bug Description: " + myDataReader["symptom"].ToString());
-                archivedBugsListBox.Items.Add("Bug Cause: " + myDataReader["cause"].ToString());
-                archivedBugsListBox.Items.Add("Class File: " + myDataReader["classFile"].ToString());
-                archivedBugsListBox.Items.Add("Method: " + myDataReader["method"].ToString());
-                archivedBugsListBox.Items.Add("Code Block: " + myDataReader["codeBlock"].ToString());
-                archivedBugsListBox.Items.Add("Line Number: " + myDataReader["lineNumber"].ToString());
-                archivedBugsListBox.Items.Add("Code Author: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("Fixer Name: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("Fix Date: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("Fixer Comment: " + myDataReader["codeAuthor"].ToString());
-                archivedBugsListBox.Items.Add("");
+                MessageBox.Show("Please enter a valid Bug ID.");
+
+            }
+        }
+
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void displaySourceCodeButton_Click(object sender, EventArgs e)
+        {
+
+            displaySourceCode.Text = String.Empty;
+
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+            String displaySourceCodeCmd = "SELECT * FROM archivedBugsTable WHERE id=" + deleteBugID.Text;
+            SqlCommand command = new SqlCommand(displaySourceCodeCmd, connection);
+            connection.Open();
+
+            SqlDataReader mySqlDataReader = command.ExecuteReader();
+
+            while (mySqlDataReader.Read())
+            {            
+
+                displaySourceCode.Text = mySqlDataReader["sourceCode"].ToString();
 
             }
         }

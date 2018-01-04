@@ -54,12 +54,14 @@
             this.mainMenuButton = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.codeAuthorTextBox = new System.Windows.Forms.TextBox();
+            this.sourceCodeTextBox = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(320, 22);
+            this.label1.Location = new System.Drawing.Point(476, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(89, 13);
             this.label1.TabIndex = 0;
@@ -108,21 +110,21 @@
             // 
             // methodTextBox
             // 
-            this.methodTextBox.Location = new System.Drawing.Point(431, 352);
+            this.methodTextBox.Location = new System.Drawing.Point(431, 348);
             this.methodTextBox.Name = "methodTextBox";
             this.methodTextBox.Size = new System.Drawing.Size(221, 20);
             this.methodTextBox.TabIndex = 6;
             // 
             // codeBlockTextBox
             // 
-            this.codeBlockTextBox.Location = new System.Drawing.Point(431, 394);
+            this.codeBlockTextBox.Location = new System.Drawing.Point(431, 390);
             this.codeBlockTextBox.Name = "codeBlockTextBox";
             this.codeBlockTextBox.Size = new System.Drawing.Size(221, 20);
             this.codeBlockTextBox.TabIndex = 7;
             // 
             // lineNumberTextBox
             // 
-            this.lineNumberTextBox.Location = new System.Drawing.Point(431, 431);
+            this.lineNumberTextBox.Location = new System.Drawing.Point(431, 427);
             this.lineNumberTextBox.Name = "lineNumberTextBox";
             this.lineNumberTextBox.Size = new System.Drawing.Size(221, 20);
             this.lineNumberTextBox.TabIndex = 8;
@@ -166,7 +168,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(382, 355);
+            this.label6.Location = new System.Drawing.Point(382, 351);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 13;
@@ -175,7 +177,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(363, 397);
+            this.label7.Location = new System.Drawing.Point(363, 393);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 14;
@@ -184,7 +186,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(358, 434);
+            this.label8.Location = new System.Drawing.Point(358, 430);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 15;
@@ -282,11 +284,30 @@
             this.codeAuthorTextBox.Size = new System.Drawing.Size(221, 20);
             this.codeAuthorTextBox.TabIndex = 25;
             // 
+            // sourceCodeTextBox
+            // 
+            this.sourceCodeTextBox.Location = new System.Drawing.Point(696, 113);
+            this.sourceCodeTextBox.Multiline = true;
+            this.sourceCodeTextBox.Name = "sourceCodeTextBox";
+            this.sourceCodeTextBox.Size = new System.Drawing.Size(238, 372);
+            this.sourceCodeTextBox.TabIndex = 26;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(757, 86);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(120, 13);
+            this.label11.TabIndex = 27;
+            this.label11.Text = "Paste source code here";
+            // 
             // whiteBoxTesterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(678, 560);
+            this.ClientSize = new System.Drawing.Size(979, 548);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.sourceCodeTextBox);
             this.Controls.Add(this.codeAuthorTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.mainMenuButton);
@@ -348,5 +369,7 @@
         private System.Windows.Forms.Button mainMenuButton;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox codeAuthorTextBox;
+        private System.Windows.Forms.TextBox sourceCodeTextBox;
+        private System.Windows.Forms.Label label11;
     }
 }
