@@ -58,29 +58,38 @@ namespace ASEAssignment
 
         private void displayBugButton_Click(object sender, EventArgs e)
         {
-            chosenBugDisplayBox.Items.Clear();
-
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
-            String pullBugCmd = "SELECT * FROM bugTrackingTable WHERE id=" + chosenBugIDBox.Text;
-            SqlCommand command = new SqlCommand(pullBugCmd, connection);
-
-            connection.Open();
-            
-            SqlDataReader mySqlDataReader = command.ExecuteReader();
-
-            while (mySqlDataReader.Read())
+            if (chosenBugIDBox.Text != String.Empty)
             {
-                chosenBugDisplayBox.Items.Add("Application ID: " + mySqlDataReader["ID"].ToString());
-                chosenBugDisplayBox.Items.Add("Application Name: " + mySqlDataReader["appName"].ToString());
-                chosenBugDisplayBox.Items.Add("Bug Description: " + mySqlDataReader["symptom"].ToString());
-                chosenBugDisplayBox.Items.Add("Bug Cause: " + mySqlDataReader["cause"].ToString());
-                chosenBugDisplayBox.Items.Add("Class File: " + mySqlDataReader["classFile"].ToString());
-                chosenBugDisplayBox.Items.Add("Method: " + mySqlDataReader["method"].ToString());
-                chosenBugDisplayBox.Items.Add("Code Block: " + mySqlDataReader["codeBlock"].ToString());
-                chosenBugDisplayBox.Items.Add("Line Number: " + mySqlDataReader["lineNumber"].ToString());
-                chosenBugDisplayBox.Items.Add("Code Author: " + mySqlDataReader["codeAuthor"].ToString());
-                chosenBugDisplayBox.Items.Add("");
-                
+
+                chosenBugDisplayBox.Items.Clear();
+
+                SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+                String pullBugCmd = "SELECT * FROM bugTrackingTable WHERE id=" + chosenBugIDBox.Text;
+                SqlCommand command = new SqlCommand(pullBugCmd, connection);
+
+                connection.Open();
+
+                SqlDataReader mySqlDataReader = command.ExecuteReader();
+
+                while (mySqlDataReader.Read())
+                {
+                    chosenBugDisplayBox.Items.Add("Archived Bug ID: " + mySqlDataReader["ID"].ToString());
+                    chosenBugDisplayBox.Items.Add("Application Name: " + mySqlDataReader["appName"].ToString());
+                    chosenBugDisplayBox.Items.Add("Bug Description: " + mySqlDataReader["symptom"].ToString());
+                    chosenBugDisplayBox.Items.Add("Bug Cause: " + mySqlDataReader["cause"].ToString());
+                    chosenBugDisplayBox.Items.Add("Class File: " + mySqlDataReader["classFile"].ToString());
+                    chosenBugDisplayBox.Items.Add("Method: " + mySqlDataReader["method"].ToString());
+                    chosenBugDisplayBox.Items.Add("Code Block: " + mySqlDataReader["codeBlock"].ToString());
+                    chosenBugDisplayBox.Items.Add("Line Number: " + mySqlDataReader["lineNumber"].ToString());
+                    chosenBugDisplayBox.Items.Add("Code Author: " + mySqlDataReader["codeAuthor"].ToString());
+                    chosenBugDisplayBox.Items.Add("");
+
+                }
+            }else
+            {
+
+                MessageBox.Show("Please enter a Bug ID.");
+
             }
         }
 
@@ -149,8 +158,9 @@ namespace ASEAssignment
             fixerNameTextBox.Text = String.Empty;
             fixDateTextBox.Text = String.Empty;
             commentTextBox.Text = String.Empty;
+            chosenBugDisplayBox.Items.Clear();
 
-            MessageBox.Show("Bug archived successfully");
+            MessageBox.Show("Bug archived successfully.");
         }
     }
 }

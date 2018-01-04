@@ -31,7 +31,6 @@
             this.button6 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.archivedBugsListBox = new System.Windows.Forms.ListBox();
-            this.updateListButton = new System.Windows.Forms.Button();
             this.deleteBugButton = new System.Windows.Forms.Button();
             this.displayArchivedBugsButton = new System.Windows.Forms.Button();
             this.deleteBugID = new System.Windows.Forms.TextBox();
@@ -65,27 +64,19 @@
             this.archivedBugsListBox.Size = new System.Drawing.Size(269, 329);
             this.archivedBugsListBox.TabIndex = 27;
             // 
-            // updateListButton
-            // 
-            this.updateListButton.Location = new System.Drawing.Point(167, 406);
-            this.updateListButton.Name = "updateListButton";
-            this.updateListButton.Size = new System.Drawing.Size(97, 36);
-            this.updateListButton.TabIndex = 28;
-            this.updateListButton.Text = "Update List";
-            this.updateListButton.UseVisualStyleBackColor = true;
-            // 
             // deleteBugButton
             // 
-            this.deleteBugButton.Location = new System.Drawing.Point(167, 454);
+            this.deleteBugButton.Location = new System.Drawing.Point(99, 461);
             this.deleteBugButton.Name = "deleteBugButton";
-            this.deleteBugButton.Size = new System.Drawing.Size(97, 36);
+            this.deleteBugButton.Size = new System.Drawing.Size(123, 36);
             this.deleteBugButton.TabIndex = 29;
             this.deleteBugButton.Text = "Delete Bug";
             this.deleteBugButton.UseVisualStyleBackColor = true;
+            this.deleteBugButton.Click += new System.EventHandler(this.deleteBugButton_Click);
             // 
             // displayArchivedBugsButton
             // 
-            this.displayArchivedBugsButton.Location = new System.Drawing.Point(21, 406);
+            this.displayArchivedBugsButton.Location = new System.Drawing.Point(99, 409);
             this.displayArchivedBugsButton.Name = "displayArchivedBugsButton";
             this.displayArchivedBugsButton.Size = new System.Drawing.Size(123, 36);
             this.displayArchivedBugsButton.TabIndex = 30;
@@ -95,7 +86,7 @@
             // 
             // deleteBugID
             // 
-            this.deleteBugID.Location = new System.Drawing.Point(109, 463);
+            this.deleteBugID.Location = new System.Drawing.Point(58, 467);
             this.deleteBugID.Name = "deleteBugID";
             this.deleteBugID.Size = new System.Drawing.Size(35, 20);
             this.deleteBugID.TabIndex = 31;
@@ -103,7 +94,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(60, 466);
+            this.label2.Location = new System.Drawing.Point(9, 470);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 32;
@@ -118,7 +109,6 @@
             this.Controls.Add(this.deleteBugID);
             this.Controls.Add(this.displayArchivedBugsButton);
             this.Controls.Add(this.deleteBugButton);
-            this.Controls.Add(this.updateListButton);
             this.Controls.Add(this.archivedBugsListBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button6);
@@ -134,7 +124,6 @@
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ListBox archivedBugsListBox;
-        private System.Windows.Forms.Button updateListButton;
         private System.Windows.Forms.Button deleteBugButton;
         private System.Windows.Forms.Button displayArchivedBugsButton;
         private System.Windows.Forms.TextBox deleteBugID;

@@ -68,14 +68,14 @@
             // bugListBox
             // 
             this.bugListBox.FormattingEnabled = true;
-            this.bugListBox.Location = new System.Drawing.Point(374, 114);
+            this.bugListBox.Location = new System.Drawing.Point(14, 113);
             this.bugListBox.Name = "bugListBox";
             this.bugListBox.Size = new System.Drawing.Size(285, 368);
             this.bugListBox.TabIndex = 1;
             // 
             // appNameTextBox
             // 
-            this.appNameTextBox.Location = new System.Drawing.Point(142, 114);
+            this.appNameTextBox.Location = new System.Drawing.Point(431, 113);
             this.appNameTextBox.Name = "appNameTextBox";
             this.appNameTextBox.ReadOnly = true;
             this.appNameTextBox.Size = new System.Drawing.Size(221, 20);
@@ -83,7 +83,7 @@
             // 
             // bugDescriptionTextBox
             // 
-            this.bugDescriptionTextBox.Location = new System.Drawing.Point(142, 154);
+            this.bugDescriptionTextBox.Location = new System.Drawing.Point(431, 153);
             this.bugDescriptionTextBox.Multiline = true;
             this.bugDescriptionTextBox.Name = "bugDescriptionTextBox";
             this.bugDescriptionTextBox.ReadOnly = true;
@@ -92,7 +92,7 @@
             // 
             // bugCauseTextBox
             // 
-            this.bugCauseTextBox.Location = new System.Drawing.Point(142, 230);
+            this.bugCauseTextBox.Location = new System.Drawing.Point(431, 229);
             this.bugCauseTextBox.Multiline = true;
             this.bugCauseTextBox.Name = "bugCauseTextBox";
             this.bugCauseTextBox.ReadOnly = true;
@@ -101,28 +101,28 @@
             // 
             // classFileTextBox
             // 
-            this.classFileTextBox.Location = new System.Drawing.Point(142, 306);
+            this.classFileTextBox.Location = new System.Drawing.Point(431, 305);
             this.classFileTextBox.Name = "classFileTextBox";
             this.classFileTextBox.Size = new System.Drawing.Size(221, 20);
             this.classFileTextBox.TabIndex = 5;
             // 
             // methodTextBox
             // 
-            this.methodTextBox.Location = new System.Drawing.Point(142, 353);
+            this.methodTextBox.Location = new System.Drawing.Point(431, 352);
             this.methodTextBox.Name = "methodTextBox";
             this.methodTextBox.Size = new System.Drawing.Size(221, 20);
             this.methodTextBox.TabIndex = 6;
             // 
             // codeBlockTextBox
             // 
-            this.codeBlockTextBox.Location = new System.Drawing.Point(142, 395);
+            this.codeBlockTextBox.Location = new System.Drawing.Point(431, 394);
             this.codeBlockTextBox.Name = "codeBlockTextBox";
             this.codeBlockTextBox.Size = new System.Drawing.Size(221, 20);
             this.codeBlockTextBox.TabIndex = 7;
             // 
             // lineNumberTextBox
             // 
-            this.lineNumberTextBox.Location = new System.Drawing.Point(142, 432);
+            this.lineNumberTextBox.Location = new System.Drawing.Point(431, 431);
             this.lineNumberTextBox.Name = "lineNumberTextBox";
             this.lineNumberTextBox.Size = new System.Drawing.Size(221, 20);
             this.lineNumberTextBox.TabIndex = 8;
@@ -130,7 +130,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(34, 117);
+            this.label2.Location = new System.Drawing.Point(323, 116);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(102, 13);
             this.label2.TabIndex = 9;
@@ -139,7 +139,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(18, 178);
+            this.label3.Location = new System.Drawing.Point(307, 177);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 13);
             this.label3.TabIndex = 10;
@@ -148,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(65, 252);
+            this.label4.Location = new System.Drawing.Point(354, 251);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 11;
@@ -157,7 +157,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(85, 309);
+            this.label5.Location = new System.Drawing.Point(374, 308);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(51, 13);
             this.label5.TabIndex = 12;
@@ -166,7 +166,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(93, 356);
+            this.label6.Location = new System.Drawing.Point(382, 355);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(43, 13);
             this.label6.TabIndex = 13;
@@ -175,7 +175,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(74, 398);
+            this.label7.Location = new System.Drawing.Point(363, 397);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(62, 13);
             this.label7.TabIndex = 14;
@@ -184,7 +184,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(69, 435);
+            this.label8.Location = new System.Drawing.Point(358, 434);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(67, 13);
             this.label8.TabIndex = 15;
@@ -192,7 +192,7 @@
             // 
             // displayBugsButton
             // 
-            this.displayBugsButton.Location = new System.Drawing.Point(451, 71);
+            this.displayBugsButton.Location = new System.Drawing.Point(91, 63);
             this.displayBugsButton.Name = "displayBugsButton";
             this.displayBugsButton.Size = new System.Drawing.Size(124, 37);
             this.displayBugsButton.TabIndex = 16;
@@ -202,7 +202,7 @@
             // 
             // clearBugsButton
             // 
-            this.clearBugsButton.Location = new System.Drawing.Point(451, 496);
+            this.clearBugsButton.Location = new System.Drawing.Point(91, 495);
             this.clearBugsButton.Name = "clearBugsButton";
             this.clearBugsButton.Size = new System.Drawing.Size(124, 34);
             this.clearBugsButton.TabIndex = 17;
@@ -212,7 +212,7 @@
             // 
             // clearBugButton
             // 
-            this.clearBugButton.Location = new System.Drawing.Point(142, 496);
+            this.clearBugButton.Location = new System.Drawing.Point(431, 495);
             this.clearBugButton.Name = "clearBugButton";
             this.clearBugButton.Size = new System.Drawing.Size(93, 34);
             this.clearBugButton.TabIndex = 18;
@@ -222,7 +222,7 @@
             // 
             // updateBugButton
             // 
-            this.updateBugButton.Location = new System.Drawing.Point(262, 496);
+            this.updateBugButton.Location = new System.Drawing.Point(551, 495);
             this.updateBugButton.Name = "updateBugButton";
             this.updateBugButton.Size = new System.Drawing.Size(101, 34);
             this.updateBugButton.TabIndex = 19;
@@ -232,7 +232,7 @@
             // 
             // pullBugButton
             // 
-            this.pullBugButton.Location = new System.Drawing.Point(241, 78);
+            this.pullBugButton.Location = new System.Drawing.Point(530, 77);
             this.pullBugButton.Name = "pullBugButton";
             this.pullBugButton.Size = new System.Drawing.Size(111, 23);
             this.pullBugButton.TabIndex = 20;
@@ -242,7 +242,7 @@
             // 
             // bugIDtextBox
             // 
-            this.bugIDtextBox.Location = new System.Drawing.Point(190, 80);
+            this.bugIDtextBox.Location = new System.Drawing.Point(479, 79);
             this.bugIDtextBox.Name = "bugIDtextBox";
             this.bugIDtextBox.Size = new System.Drawing.Size(45, 20);
             this.bugIDtextBox.TabIndex = 21;
@@ -250,7 +250,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(139, 83);
+            this.label9.Location = new System.Drawing.Point(428, 82);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 22;
@@ -269,7 +269,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(71, 470);
+            this.label10.Location = new System.Drawing.Point(360, 469);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(66, 13);
             this.label10.TabIndex = 24;
@@ -277,7 +277,7 @@
             // 
             // codeAuthorTextBox
             // 
-            this.codeAuthorTextBox.Location = new System.Drawing.Point(142, 466);
+            this.codeAuthorTextBox.Location = new System.Drawing.Point(431, 465);
             this.codeAuthorTextBox.Name = "codeAuthorTextBox";
             this.codeAuthorTextBox.Size = new System.Drawing.Size(221, 20);
             this.codeAuthorTextBox.TabIndex = 25;
@@ -286,7 +286,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(671, 560);
+            this.ClientSize = new System.Drawing.Size(678, 560);
             this.Controls.Add(this.codeAuthorTextBox);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.mainMenuButton);

@@ -114,7 +114,7 @@
             // 
             // displayBugButton
             // 
-            this.displayBugButton.Location = new System.Drawing.Point(354, 66);
+            this.displayBugButton.Location = new System.Drawing.Point(354, 63);
             this.displayBugButton.Name = "displayBugButton";
             this.displayBugButton.Size = new System.Drawing.Size(75, 23);
             this.displayBugButton.TabIndex = 31;
