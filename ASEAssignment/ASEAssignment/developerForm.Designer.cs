@@ -29,8 +29,6 @@
         private void InitializeComponent()
         {
             this.button6 = new System.Windows.Forms.Button();
-            this.displayBugsButton = new System.Windows.Forms.Button();
-            this.clearBugsButton = new System.Windows.Forms.Button();
             this.bugsDisplayBox = new System.Windows.Forms.ListBox();
             this.label1 = new System.Windows.Forms.Label();
             this.chosenBugIDBox = new System.Windows.Forms.TextBox();
@@ -49,44 +47,27 @@
             this.editSourceCodeTextBox = new System.Windows.Forms.TextBox();
             this.sourceCodeWebBrowser = new System.Windows.Forms.WebBrowser();
             this.displaySourceCode = new System.Windows.Forms.Button();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.viewArchivedBugsButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(12, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(75, 31);
             this.button6.TabIndex = 24;
             this.button6.Text = "Main Menu";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
-            // displayBugsButton
-            // 
-            this.displayBugsButton.Location = new System.Drawing.Point(12, 57);
-            this.displayBugsButton.Name = "displayBugsButton";
-            this.displayBugsButton.Size = new System.Drawing.Size(89, 36);
-            this.displayBugsButton.TabIndex = 25;
-            this.displayBugsButton.Text = "Display Bugs";
-            this.displayBugsButton.UseVisualStyleBackColor = true;
-            this.displayBugsButton.Click += new System.EventHandler(this.displayBugsButton_Click);
-            // 
-            // clearBugsButton
-            // 
-            this.clearBugsButton.Location = new System.Drawing.Point(129, 57);
-            this.clearBugsButton.Name = "clearBugsButton";
-            this.clearBugsButton.Size = new System.Drawing.Size(83, 36);
-            this.clearBugsButton.TabIndex = 26;
-            this.clearBugsButton.Text = "Clear Bugs";
-            this.clearBugsButton.UseVisualStyleBackColor = true;
-            this.clearBugsButton.Click += new System.EventHandler(this.clearBugsButton_Click);
-            // 
             // bugsDisplayBox
             // 
             this.bugsDisplayBox.FormattingEnabled = true;
-            this.bugsDisplayBox.Location = new System.Drawing.Point(9, 99);
+            this.bugsDisplayBox.Location = new System.Drawing.Point(9, 60);
             this.bugsDisplayBox.Name = "bugsDisplayBox";
-            this.bugsDisplayBox.Size = new System.Drawing.Size(213, 394);
+            this.bugsDisplayBox.Size = new System.Drawing.Size(213, 472);
             this.bugsDisplayBox.TabIndex = 27;
             // 
             // label1
@@ -125,24 +106,24 @@
             // 
             // fixerNameTextBox
             // 
-            this.fixerNameTextBox.Location = new System.Drawing.Point(311, 300);
+            this.fixerNameTextBox.Location = new System.Drawing.Point(297, 300);
             this.fixerNameTextBox.Name = "fixerNameTextBox";
-            this.fixerNameTextBox.Size = new System.Drawing.Size(159, 20);
+            this.fixerNameTextBox.Size = new System.Drawing.Size(173, 20);
             this.fixerNameTextBox.TabIndex = 32;
             // 
             // fixDateTextBox
             // 
-            this.fixDateTextBox.Location = new System.Drawing.Point(311, 342);
+            this.fixDateTextBox.Location = new System.Drawing.Point(297, 346);
             this.fixDateTextBox.Name = "fixDateTextBox";
-            this.fixDateTextBox.Size = new System.Drawing.Size(159, 20);
+            this.fixDateTextBox.Size = new System.Drawing.Size(173, 20);
             this.fixDateTextBox.TabIndex = 33;
             // 
             // commentTextBox
             // 
-            this.commentTextBox.Location = new System.Drawing.Point(311, 377);
+            this.commentTextBox.Location = new System.Drawing.Point(297, 379);
             this.commentTextBox.Multiline = true;
             this.commentTextBox.Name = "commentTextBox";
-            this.commentTextBox.Size = new System.Drawing.Size(159, 112);
+            this.commentTextBox.Size = new System.Drawing.Size(173, 112);
             this.commentTextBox.TabIndex = 34;
             // 
             // archiveBugsButton
@@ -158,7 +139,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(245, 303);
+            this.label2.Location = new System.Drawing.Point(231, 304);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(60, 13);
             this.label2.TabIndex = 36;
@@ -167,7 +148,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(259, 345);
+            this.label3.Location = new System.Drawing.Point(245, 350);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 37;
@@ -176,7 +157,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(254, 426);
+            this.label4.Location = new System.Drawing.Point(240, 429);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(51, 13);
             this.label4.TabIndex = 38;
@@ -205,31 +186,32 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(96, 17);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label6.Location = new System.Drawing.Point(440, 18);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(56, 13);
+            this.label6.Size = new System.Drawing.Size(101, 25);
             this.label6.TabIndex = 43;
             this.label6.Text = "Developer";
             // 
             // editSourceCodeTextBox
             // 
-            this.editSourceCodeTextBox.Location = new System.Drawing.Point(486, 99);
+            this.editSourceCodeTextBox.Location = new System.Drawing.Point(476, 99);
             this.editSourceCodeTextBox.Multiline = true;
             this.editSourceCodeTextBox.Name = "editSourceCodeTextBox";
-            this.editSourceCodeTextBox.Size = new System.Drawing.Size(457, 189);
+            this.editSourceCodeTextBox.Size = new System.Drawing.Size(467, 189);
             this.editSourceCodeTextBox.TabIndex = 44;
             // 
             // sourceCodeWebBrowser
             // 
-            this.sourceCodeWebBrowser.Location = new System.Drawing.Point(486, 346);
+            this.sourceCodeWebBrowser.Location = new System.Drawing.Point(476, 346);
             this.sourceCodeWebBrowser.MinimumSize = new System.Drawing.Size(20, 20);
             this.sourceCodeWebBrowser.Name = "sourceCodeWebBrowser";
-            this.sourceCodeWebBrowser.Size = new System.Drawing.Size(457, 189);
+            this.sourceCodeWebBrowser.Size = new System.Drawing.Size(467, 189);
             this.sourceCodeWebBrowser.TabIndex = 45;
             // 
             // displaySourceCode
             // 
-            this.displaySourceCode.Location = new System.Drawing.Point(486, 300);
+            this.displaySourceCode.Location = new System.Drawing.Point(476, 300);
             this.displaySourceCode.Name = "displaySourceCode";
             this.displaySourceCode.Size = new System.Drawing.Size(117, 36);
             this.displaySourceCode.TabIndex = 46;
@@ -237,11 +219,44 @@
             this.displaySourceCode.UseVisualStyleBackColor = true;
             this.displaySourceCode.Click += new System.EventHandler(this.displaySourceCode_Click);
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label5.Location = new System.Drawing.Point(666, 68);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(102, 20);
+            this.label5.TabIndex = 47;
+            this.label5.Text = "Source Code";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            this.label7.Location = new System.Drawing.Point(624, 307);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(180, 20);
+            this.label7.TabIndex = 48;
+            this.label7.Text = "Formatted Source Code";
+            // 
+            // viewArchivedBugsButton
+            // 
+            this.viewArchivedBugsButton.Location = new System.Drawing.Point(818, 12);
+            this.viewArchivedBugsButton.Name = "viewArchivedBugsButton";
+            this.viewArchivedBugsButton.Size = new System.Drawing.Size(125, 31);
+            this.viewArchivedBugsButton.TabIndex = 49;
+            this.viewArchivedBugsButton.Text = "View Archived Bugs";
+            this.viewArchivedBugsButton.UseVisualStyleBackColor = true;
+            this.viewArchivedBugsButton.Click += new System.EventHandler(this.viewArchivedBugsButton_Click);
+            // 
             // developerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 545);
+            this.Controls.Add(this.viewArchivedBugsButton);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.displaySourceCode);
             this.Controls.Add(this.sourceCodeWebBrowser);
             this.Controls.Add(this.editSourceCodeTextBox);
@@ -260,8 +275,6 @@
             this.Controls.Add(this.chosenBugIDBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.bugsDisplayBox);
-            this.Controls.Add(this.clearBugsButton);
-            this.Controls.Add(this.displayBugsButton);
             this.Controls.Add(this.button6);
             this.Name = "developerForm";
             this.Text = "developerForm";
@@ -273,8 +286,6 @@
         #endregion
 
         private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button displayBugsButton;
-        private System.Windows.Forms.Button clearBugsButton;
         private System.Windows.Forms.ListBox bugsDisplayBox;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox chosenBugIDBox;
@@ -293,5 +304,8 @@
         private System.Windows.Forms.TextBox editSourceCodeTextBox;
         private System.Windows.Forms.WebBrowser sourceCodeWebBrowser;
         private System.Windows.Forms.Button displaySourceCode;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button viewArchivedBugsButton;
     }
 }

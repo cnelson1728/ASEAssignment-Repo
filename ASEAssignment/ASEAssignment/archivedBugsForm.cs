@@ -14,27 +14,12 @@ namespace ASEAssignment
 {
     public partial class archivedBugsForm : Form
     {
-
-
-        public archivedBugsForm()
-        {
-            InitializeComponent();
-        }
-
-        private void button6_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            mainMenu MM = new mainMenu();
-            MM.ShowDialog();
-        }
-
         /// <summary>
-        /// 
+        /// Displays all the current bugs in the Archived Bugs Table
         /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void displayArchivedBugsButton_Click(object sender, EventArgs e)
+        private void displayData()
         {
+
             archivedBugsListBox.Items.Clear();
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
             String displayQuery = "SELECT * FROM archivedBugsTable";
@@ -62,21 +47,39 @@ namespace ASEAssignment
             }
         }
 
+        public archivedBugsForm()
+        {
+
+            InitializeComponent();
+            displayData();
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            mainMenu MM = new mainMenu();
+            MM.ShowDialog();
+
+        }
+        
+
         /// <summary>
-        /// 
+        /// Deletes a bug from the Archived Bugs Table
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void deleteBugButton_Click(object sender, EventArgs e)
         {
-            displaySourceCode.Text = String.Empty;
+            displaySourceCode.Text = String.Empty; // Clears the source code of the deleted bug
 
             try
             {
                 String connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30";
 
 
-                if (deleteBugID.Text != String.Empty && archivedBugsListBox.Items.Contains("Application ID: " + deleteBugID.Text))
+                if (deleteBugID.Text != String.Empty && archivedBugsListBox.Items.Contains("Application ID: " + deleteBugID.Text)) // Deletes if there is a record matching the ID that the user has entered
                 {
 
                     String deleteQuery = "DELETE FROM archivedBugsTable WHERE id=" + deleteBugID.Text;
@@ -101,7 +104,7 @@ namespace ASEAssignment
                     myConnection.Open();
                     SqlDataReader myDataReader = displayCommand.ExecuteReader();
 
-                    while (myDataReader.Read())
+                    while (myDataReader.Read()) // Refreshse the list box displaying the bugs currently stored in the Archived Bugs Table
                     {
 
                         archivedBugsListBox.Items.Add("Application ID: " + myDataReader["ID"].ToString());
@@ -127,7 +130,7 @@ namespace ASEAssignment
 
                 }                
             }
-            catch(Exception exception)
+            catch(Exception exception) // Catches an exception if the user enters a string
             {
 
                 MessageBox.Show("Please enter a valid Bug ID.");
@@ -136,7 +139,7 @@ namespace ASEAssignment
         }
 
         /// <summary>
-        /// 
+        /// Displays the source code for the bug ID that the user has entered
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>

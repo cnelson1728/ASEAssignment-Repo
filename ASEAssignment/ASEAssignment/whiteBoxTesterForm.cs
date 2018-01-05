@@ -13,20 +13,51 @@ namespace ASEAssignment
 {
     public partial class whiteBoxTesterForm : Form
     {
+
+        /// <summary>
+        /// Displays all the bugs from the Bug Tracking Table
+        /// </summary>
+        private void displayBugs()
+        {
+
+            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+            String displayQuery = "SELECT * FROM bugTrackingTable";
+            SqlCommand command = new SqlCommand(displayQuery, connection);
+            connection.Open();
+            SqlDataReader myDataReader = command.ExecuteReader();
+
+            while (myDataReader.Read())
+            {
+
+                bugListBox.Items.Add("Bug ID: " + myDataReader["ID"].ToString());
+                bugListBox.Items.Add("Application Name: " + myDataReader["appName"].ToString());
+                bugListBox.Items.Add("Bug Description: " + myDataReader["symptom"].ToString());
+                bugListBox.Items.Add("");
+
+            }
+
+        }
+
         public whiteBoxTesterForm()
         {
+            
             InitializeComponent();
+            displayBugs();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
+
             this.Hide();
             mainMenu MM = new mainMenu();
             MM.ShowDialog();
+
         }
 
         /// <summary>
-        /// 
+        /// Method to update a record in the Bug Tracking Table.
+        /// Adds to a record previously entered in the Black Box Tester form
         /// </summary>
         /// <param name="classFile"></param>
         /// <param name="method"></param>
@@ -37,6 +68,7 @@ namespace ASEAssignment
         /// <param name="commandString"></param>
         public void updateRecord(String classFile, String method, String codeBlock, String sourceCode, int lineNumber, String codeAuthor, String commandString)
         {
+
             SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
             connection.Open();
             SqlCommand command = new SqlCommand(commandString, connection);
@@ -52,7 +84,8 @@ namespace ASEAssignment
         }
 
         /// <summary>
-        /// 
+        /// Button to implement the updateRecord method
+        /// Runs if all applicable text boxes
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -62,6 +95,7 @@ namespace ASEAssignment
             {
                 if(appNameTextBox.Text != String.Empty && bugDescriptionTextBox.Text != String.Empty && bugCauseTextBox.Text != String.Empty && classFileTextBox.Text != String.Empty && methodTextBox.Text != String.Empty && codeBlockTextBox.Text != String.Empty && sourceCodeTextBox.Text != String.Empty && lineNumberTextBox.Text != String. Empty && codeAuthorTextBox.Text != String.Empty)
                 {
+
                     string commandString = "UPDATE bugTrackingTable SET classFile = @classFile,  method = @method, codeBlock = @codeBlock, sourceCode = @sourceCode, lineNumber = @lineNumber, codeAuthor = @codeAuthor WHERE id=" + bugIDtextBox.Text;
                     updateRecord(classFileTextBox.Text, methodTextBox.Text, codeBlockTextBox.Text, sourceCodeTextBox.Text, Int32.Parse(lineNumberTextBox.Text), codeAuthorTextBox.Text, commandString);
 
@@ -87,7 +121,7 @@ namespace ASEAssignment
                 }
 
             }
-            catch (FormatException intExpected)
+            catch (FormatException intExpected) // If user doesn't enter an Integer for the lineNumber value
             {
 
                 lineNumberTextBox.Text = String.Empty;
@@ -96,43 +130,21 @@ namespace ASEAssignment
             }
         }
 
-        /// <summary>
-        /// 
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void displayBugsButton_Click(object sender, EventArgs e)
-        {
-            bugListBox.Items.Clear();
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
-            String displayQuery = "SELECT * FROM bugTrackingTable";
-            SqlCommand command = new SqlCommand(displayQuery, connection);
-            connection.Open();
-            SqlDataReader myDataReader = command.ExecuteReader();
-
-            while (myDataReader.Read())
-            {
-
-                bugListBox.Items.Add("Bug ID: " + myDataReader["ID"].ToString());
-                bugListBox.Items.Add("Application Name: " + myDataReader["appName"].ToString());
-                bugListBox.Items.Add("Bug Description: " + myDataReader["symptom"].ToString());
-                bugListBox.Items.Add("");
-
-            }
-        }
-
         private void clearBugsButton_Click(object sender, EventArgs e)
         {
+
             bugListBox.Items.Clear();
+
         }
 
         /// <summary>
-        /// 
+        /// Clears data entry fields for the White Box Tester
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void clearBugButton_Click(object sender, EventArgs e)
         {
+
             bugIDtextBox.Text = String.Empty;
             appNameTextBox.Text = String.Empty;
             bugDescriptionTextBox.Text = String.Empty;
@@ -142,10 +154,12 @@ namespace ASEAssignment
             codeBlockTextBox.Text = String.Empty;
             lineNumberTextBox.Text = String.Empty;
             codeAuthorTextBox.Text = String.Empty;
+
         }
 
         /// <summary>
-        /// 
+        /// Displays bug data from the bug tracking table to the user matching the ID they have entered
+        /// Runs if user has entered a bug ID
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -155,6 +169,7 @@ namespace ASEAssignment
             {
                 if (bugIDtextBox.Text != String.Empty)
                 {
+
                     SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
                     String pullBugCmd = "SELECT * FROM bugTrackingTable WHERE id=" + bugIDtextBox.Text;
                     SqlCommand command = new SqlCommand(pullBugCmd, connection);
@@ -177,7 +192,7 @@ namespace ASEAssignment
 
 
                     }
-                    if(appNameTextBox.Text == String.Empty)
+                    if(appNameTextBox.Text == String.Empty) // If the user has entered a number but no record is displayed then the ID doesn't match a record in the table
                     {
 
                         MessageBox.Show("No matching records. Please enter a valid Bug ID.");
@@ -192,7 +207,7 @@ namespace ASEAssignment
 
                 }
             }
-            catch(Exception exception)
+            catch(Exception exception) // Catches an exception if the user doesn't enter an Integer 
             {
 
                 bugIDtextBox.Text = String.Empty;

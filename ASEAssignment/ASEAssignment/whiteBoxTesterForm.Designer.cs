@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.titleLabel = new System.Windows.Forms.Label();
             this.bugListBox = new System.Windows.Forms.ListBox();
             this.appNameTextBox = new System.Windows.Forms.TextBox();
             this.bugDescriptionTextBox = new System.Windows.Forms.TextBox();
@@ -44,8 +44,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.displayBugsButton = new System.Windows.Forms.Button();
-            this.clearBugsButton = new System.Windows.Forms.Button();
             this.clearBugButton = new System.Windows.Forms.Button();
             this.updateBugButton = new System.Windows.Forms.Button();
             this.pullBugButton = new System.Windows.Forms.Button();
@@ -58,21 +56,22 @@
             this.label11 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
+            // titleLabel
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(476, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(89, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "White Box Tester";
+            this.titleLabel.AutoSize = true;
+            this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.titleLabel.Location = new System.Drawing.Point(461, 23);
+            this.titleLabel.Name = "titleLabel";
+            this.titleLabel.Size = new System.Drawing.Size(163, 25);
+            this.titleLabel.TabIndex = 0;
+            this.titleLabel.Text = "White Box Tester";
             // 
             // bugListBox
             // 
             this.bugListBox.FormattingEnabled = true;
-            this.bugListBox.Location = new System.Drawing.Point(14, 113);
+            this.bugListBox.Location = new System.Drawing.Point(14, 74);
             this.bugListBox.Name = "bugListBox";
-            this.bugListBox.Size = new System.Drawing.Size(285, 368);
+            this.bugListBox.Size = new System.Drawing.Size(285, 446);
             this.bugListBox.TabIndex = 1;
             // 
             // appNameTextBox
@@ -192,26 +191,6 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Line Number";
             // 
-            // displayBugsButton
-            // 
-            this.displayBugsButton.Location = new System.Drawing.Point(91, 63);
-            this.displayBugsButton.Name = "displayBugsButton";
-            this.displayBugsButton.Size = new System.Drawing.Size(124, 37);
-            this.displayBugsButton.TabIndex = 16;
-            this.displayBugsButton.Text = "Display Bugs";
-            this.displayBugsButton.UseVisualStyleBackColor = true;
-            this.displayBugsButton.Click += new System.EventHandler(this.displayBugsButton_Click);
-            // 
-            // clearBugsButton
-            // 
-            this.clearBugsButton.Location = new System.Drawing.Point(91, 495);
-            this.clearBugsButton.Name = "clearBugsButton";
-            this.clearBugsButton.Size = new System.Drawing.Size(124, 34);
-            this.clearBugsButton.TabIndex = 17;
-            this.clearBugsButton.Text = "Clear Bugs";
-            this.clearBugsButton.UseVisualStyleBackColor = true;
-            this.clearBugsButton.Click += new System.EventHandler(this.clearBugsButton_Click);
-            // 
             // clearBugButton
             // 
             this.clearBugButton.Location = new System.Drawing.Point(431, 495);
@@ -289,7 +268,7 @@
             this.sourceCodeTextBox.Location = new System.Drawing.Point(696, 113);
             this.sourceCodeTextBox.Multiline = true;
             this.sourceCodeTextBox.Name = "sourceCodeTextBox";
-            this.sourceCodeTextBox.Size = new System.Drawing.Size(238, 372);
+            this.sourceCodeTextBox.Size = new System.Drawing.Size(238, 416);
             this.sourceCodeTextBox.TabIndex = 26;
             // 
             // label11
@@ -316,8 +295,6 @@
             this.Controls.Add(this.pullBugButton);
             this.Controls.Add(this.updateBugButton);
             this.Controls.Add(this.clearBugButton);
-            this.Controls.Add(this.clearBugsButton);
-            this.Controls.Add(this.displayBugsButton);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -333,7 +310,7 @@
             this.Controls.Add(this.bugDescriptionTextBox);
             this.Controls.Add(this.appNameTextBox);
             this.Controls.Add(this.bugListBox);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.titleLabel);
             this.Name = "whiteBoxTesterForm";
             this.Text = "whiteBoxTesterForm";
             this.ResumeLayout(false);
@@ -343,7 +320,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.ListBox bugListBox;
         private System.Windows.Forms.TextBox appNameTextBox;
         private System.Windows.Forms.TextBox bugDescriptionTextBox;
@@ -359,8 +336,6 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button displayBugsButton;
-        private System.Windows.Forms.Button clearBugsButton;
         private System.Windows.Forms.Button clearBugButton;
         private System.Windows.Forms.Button updateBugButton;
         private System.Windows.Forms.Button pullBugButton;

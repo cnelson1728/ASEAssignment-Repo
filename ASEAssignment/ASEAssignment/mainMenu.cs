@@ -17,6 +17,11 @@ namespace ASEAssignment
             InitializeComponent();
         }
 
+        /// <summary>
+        /// Takes uesr to Black Box Tester Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void blackBoxTesterButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -24,6 +29,11 @@ namespace ASEAssignment
             BBTF.ShowDialog();
         }
 
+        /// <summary>
+        /// Takes user to White Box Tester Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void whiteBoxTesterButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -31,6 +41,11 @@ namespace ASEAssignment
             WBTF.ShowDialog();
         }
 
+        /// <summary>
+        /// Takes user to Developer Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void developerButton_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -38,6 +53,11 @@ namespace ASEAssignment
             DF.ShowDialog();
         }
 
+        /// <summary>
+        /// Takes user to Archived Bugs Form
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void archivedBugsButton_Click(object sender, EventArgs e)
         {
            this.Hide();

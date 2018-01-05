@@ -41,7 +41,7 @@
             // 
             // bugSubmitButton
             // 
-            this.bugSubmitButton.Location = new System.Drawing.Point(112, 286);
+            this.bugSubmitButton.Location = new System.Drawing.Point(106, 303);
             this.bugSubmitButton.Name = "bugSubmitButton";
             this.bugSubmitButton.Size = new System.Drawing.Size(121, 47);
             this.bugSubmitButton.TabIndex = 0;
@@ -51,7 +51,7 @@
             // 
             // appNameTextBox
             // 
-            this.appNameTextBox.Location = new System.Drawing.Point(160, 88);
+            this.appNameTextBox.Location = new System.Drawing.Point(154, 105);
             this.appNameTextBox.Multiline = true;
             this.appNameTextBox.Name = "appNameTextBox";
             this.appNameTextBox.Size = new System.Drawing.Size(169, 26);
@@ -60,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(50, 95);
+            this.label1.Location = new System.Drawing.Point(44, 112);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(102, 13);
             this.label1.TabIndex = 2;
@@ -69,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(102, 153);
+            this.label2.Location = new System.Drawing.Point(96, 170);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(50, 13);
             this.label2.TabIndex = 3;
@@ -77,7 +77,7 @@
             // 
             // symptomTextBox
             // 
-            this.symptomTextBox.Location = new System.Drawing.Point(160, 137);
+            this.symptomTextBox.Location = new System.Drawing.Point(154, 154);
             this.symptomTextBox.Multiline = true;
             this.symptomTextBox.Name = "symptomTextBox";
             this.symptomTextBox.Size = new System.Drawing.Size(169, 47);
@@ -85,7 +85,7 @@
             // 
             // causeOfBugTextBox
             // 
-            this.causeOfBugTextBox.Location = new System.Drawing.Point(160, 205);
+            this.causeOfBugTextBox.Location = new System.Drawing.Point(154, 222);
             this.causeOfBugTextBox.Multiline = true;
             this.causeOfBugTextBox.Name = "causeOfBugTextBox";
             this.causeOfBugTextBox.Size = new System.Drawing.Size(169, 48);
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 225);
+            this.label3.Location = new System.Drawing.Point(75, 242);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 13);
             this.label3.TabIndex = 6;
@@ -103,9 +103,10 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(132, 48);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.label4.Location = new System.Drawing.Point(159, 52);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(88, 13);
+            this.label4.Size = new System.Drawing.Size(160, 25);
             this.label4.TabIndex = 7;
             this.label4.Text = "Black Box Tester";
             // 

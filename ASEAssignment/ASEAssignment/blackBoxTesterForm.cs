@@ -15,7 +15,9 @@ namespace ASEAssignment
     {
         public blackBoxTesterForm()
         {
+
             InitializeComponent();
+
         }
 
         private void button6_Click(object sender, EventArgs e)
@@ -27,7 +29,8 @@ namespace ASEAssignment
 
         }
         /// <summary>
-        /// 
+        /// Method to insert a record into the Bug Tracking Table.
+        /// Opens an SQL Connection and adds parameters that match the method parameters for the data to insert into Bug Tracking Table.
         /// </summary>
         /// <param name="appName"></param>
         /// <param name="symptom"></param>
@@ -47,7 +50,10 @@ namespace ASEAssignment
         }
 
         /// <summary>
-        /// 
+        /// Button to submit a bug to the Bug Tracking Table.
+        /// Runs if all applicable text boxes contain data.
+        /// Creates command string for insertRecord method.
+        /// Implements insertRecord method, passing data from text boxes entered by the user as parameters.
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
