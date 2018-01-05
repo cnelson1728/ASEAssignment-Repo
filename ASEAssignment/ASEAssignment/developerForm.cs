@@ -69,6 +69,10 @@ namespace ASEAssignment
             chosenBugDisplayBox.Items.Clear();
             chosenBugIDBox.Text = "";
             editSourceCodeTextBox.Text = "";
+            sourceCodeWebBrowser.DocumentText = "";
+            fixerNameTextBox.Text = "";
+            fixDateTextBox.Text = "";
+            commentTextBox.Text = "";
 
         }
 

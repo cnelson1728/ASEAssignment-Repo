@@ -189,7 +189,7 @@ namespace ASEAssignment
                         codeBlockTextBox.Text = (mySqlDataReader["codeBlock"].ToString());
                         lineNumberTextBox.Text = (mySqlDataReader["lineNumber"].ToString());
                         codeAuthorTextBox.Text = (mySqlDataReader["codeAuthor"].ToString());
-
+                        sourceCodeTextBox.Text = (mySqlDataReader["sourceCode"].ToString());
 
                     }
                     if(appNameTextBox.Text == String.Empty) // If the user has entered a number but no record is displayed then the ID doesn't match a record in the table
