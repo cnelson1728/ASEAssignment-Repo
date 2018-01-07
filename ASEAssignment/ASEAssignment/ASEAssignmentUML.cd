@@ -1,37 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="ASEAssignment.mainMenu">
-    <Position X="8" Y="4.25" Width="2.75" />
+    <Position X="8" Y="5.75" Width="2.75" />
     <TypeIdentifier>
-      <HashCode>AABAgAAACCAAABAAAgSCAACiAACAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AABAgAAACCAAABAAAgSCAACiAACAAAAAAAAAAAACAAA=</HashCode>
       <FileName>mainMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ASEAssignment.blackBoxTesterForm">
-    <Position X="4.25" Y="4" Width="2.25" />
+    <Position X="4.25" Y="5.25" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>QABAAAAAECAAABAAAACQAAACAQAAAAAAAAACIgAAAAA=</HashCode>
+      <HashCode>QABAAAAAECAAABAAAgCQAAACAQAAAAAAAAACIgACAAA=</HashCode>
       <FileName>blackBoxTesterForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ASEAssignment.whiteBoxTesterForm">
-    <Position X="1.25" Y="1.5" Width="2.25" />
+    <Position X="1.5" Y="1" Width="2.25" />
     <TypeIdentifier>
-      <HashCode>sAQQAYIIESAIARAAQACAQIFCAwDAICAQAAACAAAAAAA=</HashCode>
+      <HashCode>sAQAAZIIESAIARAAQgCAAIFCAQDAICAQAAACAAACAAA=</HashCode>
       <FileName>whiteBoxTesterForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ASEAssignment.developerForm">
-    <Position X="12" Y="1.75" Width="2.25" />
+    <Position X="12" Y="1.25" Width="2.5" />
     <TypeIdentifier>
-      <HashCode>AAAQAABgAbEQAhAQwACAYAACAgBJIAAYAAQCAAAAAAA=</HashCode>
+      <HashCode>AAAAABBggbEQAhAQwgCAYAACAABJIAAYAAQCBAACAAA=</HashCode>
       <FileName>developerForm.cs</FileName>
     </TypeIdentifier>
   </Class>
-  <Class Name="ASEAssignment.archivedBugsForm">
-    <Position X="15.5" Y="3.75" Width="2.5" />
+  <Class Name="ASEAssignment.loginPage">
+    <Position X="8.25" Y="0.75" Width="2" />
     <TypeIdentifier>
-      <HashCode>AAAAAQAgBKAAAhAAAgCAAAACAAABAAAAAAQCAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAAASAgAhAAICCABAACAAAIAAAAAAIAAAEAAAQ=</HashCode>
+      <FileName>loginPage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASEAssignment.registerForm">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAgACAAABAAAACAAAADAQAAAAAAIAAAABAAAAg=</HashCode>
+      <FileName>registerForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ASEAssignment.archivedBugsForm">
+    <Position X="16.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQAgoKAgAhAAAgCAAAACAAABAAAAAAQCAAACAAE=</HashCode>
       <FileName>archivedBugsForm.cs</FileName>
     </TypeIdentifier>
   </Class>

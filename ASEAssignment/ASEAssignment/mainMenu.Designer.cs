@@ -34,6 +34,7 @@
             this.titleLabel = new System.Windows.Forms.Label();
             this.archivedBugsButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // blackBoxTesterButton
@@ -73,7 +74,7 @@
             // 
             this.titleLabel.AutoSize = true;
             this.titleLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F);
-            this.titleLabel.Location = new System.Drawing.Point(100, 38);
+            this.titleLabel.Location = new System.Drawing.Point(98, 60);
             this.titleLabel.Name = "titleLabel";
             this.titleLabel.Size = new System.Drawing.Size(379, 39);
             this.titleLabel.TabIndex = 3;
@@ -100,11 +101,22 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Choose User Profile";
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(13, 13);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(78, 29);
+            this.logoutButton.TabIndex = 6;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // mainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(554, 484);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.archivedBugsButton);
             this.Controls.Add(this.titleLabel);
@@ -126,6 +138,7 @@
         private System.Windows.Forms.Label titleLabel;
         private System.Windows.Forms.Button archivedBugsButton;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button logoutButton;
     }
 }
 

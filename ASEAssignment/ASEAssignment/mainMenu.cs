@@ -64,5 +64,14 @@ namespace ASEAssignment
            archivedBugsForm ABF = new archivedBugsForm();
            ABF.ShowDialog();
         }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            loginPage LP = new loginPage();
+            LP.ShowDialog();
+
+        }
     }
 }

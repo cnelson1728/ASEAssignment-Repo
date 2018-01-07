@@ -54,6 +54,7 @@
             this.codeAuthorTextBox = new System.Windows.Forms.TextBox();
             this.sourceCodeTextBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // titleLabel
@@ -69,7 +70,7 @@
             // bugListBox
             // 
             this.bugListBox.FormattingEnabled = true;
-            this.bugListBox.Location = new System.Drawing.Point(14, 74);
+            this.bugListBox.Location = new System.Drawing.Point(16, 77);
             this.bugListBox.Name = "bugListBox";
             this.bugListBox.Size = new System.Drawing.Size(285, 446);
             this.bugListBox.TabIndex = 1;
@@ -239,9 +240,9 @@
             // 
             // mainMenuButton
             // 
-            this.mainMenuButton.Location = new System.Drawing.Point(13, 13);
+            this.mainMenuButton.Location = new System.Drawing.Point(886, 12);
             this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(75, 23);
+            this.mainMenuButton.Size = new System.Drawing.Size(81, 28);
             this.mainMenuButton.TabIndex = 23;
             this.mainMenuButton.Text = "Main Menu";
             this.mainMenuButton.UseVisualStyleBackColor = true;
@@ -265,7 +266,7 @@
             // 
             // sourceCodeTextBox
             // 
-            this.sourceCodeTextBox.Location = new System.Drawing.Point(696, 113);
+            this.sourceCodeTextBox.Location = new System.Drawing.Point(696, 104);
             this.sourceCodeTextBox.Multiline = true;
             this.sourceCodeTextBox.Name = "sourceCodeTextBox";
             this.sourceCodeTextBox.Size = new System.Drawing.Size(238, 416);
@@ -274,17 +275,28 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(757, 86);
+            this.label11.Location = new System.Drawing.Point(754, 74);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(120, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Paste source code here";
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(12, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 28;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // whiteBoxTesterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(979, 548);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.sourceCodeTextBox);
             this.Controls.Add(this.codeAuthorTextBox);
@@ -346,5 +358,6 @@
         private System.Windows.Forms.TextBox codeAuthorTextBox;
         private System.Windows.Forms.TextBox sourceCodeTextBox;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

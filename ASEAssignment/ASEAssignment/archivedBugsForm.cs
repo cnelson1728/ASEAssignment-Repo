@@ -92,48 +92,26 @@ namespace ASEAssignment
 
                             deleteCommand.ExecuteNonQuery();
                             mySqlConnection.Close();
-                            MessageBox.Show("Bug deleted successfully");
+                            MessageBox.Show("Bug deleted successfully", "Success");
                             deleteBugID.Text = String.Empty;
 
                         }
                     }
-                    String displayQuery = "SELECT * FROM archivedBugsTable";
-                    archivedBugsListBox.Items.Clear();
-                    SqlConnection myConnection = new SqlConnection(connection);
-                    SqlCommand displayCommand = new SqlCommand(displayQuery, myConnection);
-                    myConnection.Open();
-                    SqlDataReader myDataReader = displayCommand.ExecuteReader();
 
-                    while (myDataReader.Read()) // Refreshse the list box displaying the bugs currently stored in the Archived Bugs Table
-                    {
+                displayData();
 
-                        archivedBugsListBox.Items.Add("Application ID: " + myDataReader["ID"].ToString());
-                        archivedBugsListBox.Items.Add("Application Name: " + myDataReader["appName"].ToString());
-                        archivedBugsListBox.Items.Add("Bug Description: " + myDataReader["symptom"].ToString());
-                        archivedBugsListBox.Items.Add("Bug Cause: " + myDataReader["cause"].ToString());
-                        archivedBugsListBox.Items.Add("Class File: " + myDataReader["classFile"].ToString());
-                        archivedBugsListBox.Items.Add("Method: " + myDataReader["method"].ToString());
-                        archivedBugsListBox.Items.Add("Code Block: " + myDataReader["codeBlock"].ToString());
-                        archivedBugsListBox.Items.Add("Line Number: " + myDataReader["lineNumber"].ToString());
-                        archivedBugsListBox.Items.Add("Code Author: " + myDataReader["codeAuthor"].ToString());
-                        archivedBugsListBox.Items.Add("Fixer Name: " + myDataReader["codeAuthor"].ToString());
-                        archivedBugsListBox.Items.Add("Fix Date: " + myDataReader["codeAuthor"].ToString());
-                        archivedBugsListBox.Items.Add("Fixer Comment: " + myDataReader["codeAuthor"].ToString());
-                        archivedBugsListBox.Items.Add("");
-
-                    }
                 }
                 else
                 {
 
-                    MessageBox.Show("Please enter a valid Bug ID.");
+                    MessageBox.Show("Please enter a valid Bug ID.", "Alert");
 
                 }                
             }
             catch(Exception exception) // Catches an exception if the user enters a string
             {
 
-                MessageBox.Show("Please enter a valid Bug ID.");
+                MessageBox.Show("Please enter a valid Bug ID.", "Alert");
 
             }
         }
@@ -145,22 +123,86 @@ namespace ASEAssignment
         /// <param name="e"></param>
         private void displaySourceCodeButton_Click(object sender, EventArgs e)
         {
+            try
+            {
 
-            displaySourceCode.Text = String.Empty;
+                if (deleteBugID.Text != String.Empty)
+                {
 
-            SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
-            String displaySourceCodeCmd = "SELECT * FROM archivedBugsTable WHERE id=" + deleteBugID.Text;
-            SqlCommand command = new SqlCommand(displaySourceCodeCmd, connection);
-            connection.Open();
+                    displaySourceCode.Text = String.Empty;
 
-            SqlDataReader mySqlDataReader = command.ExecuteReader();
+                    SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30");
+                    String displaySourceCodeCmd = "SELECT * FROM archivedBugsTable WHERE id=" + deleteBugID.Text;
+                    SqlCommand command = new SqlCommand(displaySourceCodeCmd, connection);
+                    connection.Open();
 
-            while (mySqlDataReader.Read())
-            {            
+                    SqlDataReader mySqlDataReader = command.ExecuteReader();
 
-                displaySourceCode.Text = mySqlDataReader["sourceCode"].ToString();
+                    while (mySqlDataReader.Read())
+                    {
+
+                        displaySourceCode.Text = mySqlDataReader["sourceCode"].ToString();
+
+                    }
+
+                }
+                else
+                {
+
+                    MessageBox.Show("Please enter a Bug ID to display.", "Alert");
+
+                }
 
             }
+            catch(Exception exception)
+            {
+
+                MessageBox.Show("Please enter a valid Bug ID.", "Alert");
+
+            }
+
+
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            loginPage LP = new loginPage();
+            LP.ShowDialog();
+
+        }
+
+        private void reOpenBugButton_Click(object sender, EventArgs e)
+        {
+
+            String connection = @"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=F:\bugTrackingDatabase.mdf;Integrated Security=True;Connect Timeout=30";
+
+            String archiveQuery = "INSERT INTO  bugTrackingTable (appName, symptom, cause, classFile, method, codeBlock, sourceCode, lineNumber, codeAuthor, fixerName, fixDate, fixerComment) SELECT appName, symptom, cause, classFile, method, codeBlock, sourceCode, lineNumber, codeAuthor, fixerName, fixDate, fixerComment FROM archivedBugsTable WHERE id=" + deleteBugID.Text;
+            String deleteQuery = "DELETE FROM archivedBugsTable WHERE id = " + deleteBugID.Text;
+
+            using (SqlConnection myConnection = new SqlConnection(connection))
+            {
+
+                myConnection.Open();
+                using (SqlCommand archiveCommand = new SqlCommand(archiveQuery, myConnection))
+                {
+
+                    archiveCommand.ExecuteNonQuery(); // Copies all data from the Archived Bugs Table to the Bug Tracking Table
+
+                }
+                using (SqlCommand deleteCommand = new SqlCommand(deleteQuery, myConnection))
+                {
+
+                    deleteCommand.ExecuteNonQuery(); // 
+
+                }
+            }
+
+            
+            MessageBox.Show("Bug Re-Opened Successfully", "Success");
+            displayData();
+            deleteBugID.Text = String.Empty;
         }
     }
 }

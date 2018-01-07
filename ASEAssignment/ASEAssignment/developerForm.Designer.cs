@@ -50,11 +50,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.viewArchivedBugsButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 12);
+            this.button6.Location = new System.Drawing.Point(869, 12);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(75, 31);
             this.button6.TabIndex = 24;
@@ -241,7 +242,7 @@
             // 
             // viewArchivedBugsButton
             // 
-            this.viewArchivedBugsButton.Location = new System.Drawing.Point(818, 12);
+            this.viewArchivedBugsButton.Location = new System.Drawing.Point(738, 12);
             this.viewArchivedBugsButton.Name = "viewArchivedBugsButton";
             this.viewArchivedBugsButton.Size = new System.Drawing.Size(125, 31);
             this.viewArchivedBugsButton.TabIndex = 49;
@@ -249,11 +250,22 @@
             this.viewArchivedBugsButton.UseVisualStyleBackColor = true;
             this.viewArchivedBugsButton.Click += new System.EventHandler(this.viewArchivedBugsButton_Click);
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(12, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 50;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
             // developerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 545);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.viewArchivedBugsButton);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label5);
@@ -307,5 +319,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button viewArchivedBugsButton;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

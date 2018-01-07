@@ -37,11 +37,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.mainMenuButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // bugSubmitButton
             // 
-            this.bugSubmitButton.Location = new System.Drawing.Point(106, 303);
+            this.bugSubmitButton.Location = new System.Drawing.Point(176, 300);
             this.bugSubmitButton.Name = "bugSubmitButton";
             this.bugSubmitButton.Size = new System.Drawing.Size(121, 47);
             this.bugSubmitButton.TabIndex = 0;
@@ -112,19 +113,30 @@
             // 
             // mainMenuButton
             // 
-            this.mainMenuButton.Location = new System.Drawing.Point(12, 12);
+            this.mainMenuButton.Location = new System.Drawing.Point(293, 12);
             this.mainMenuButton.Name = "mainMenuButton";
-            this.mainMenuButton.Size = new System.Drawing.Size(75, 23);
+            this.mainMenuButton.Size = new System.Drawing.Size(70, 26);
             this.mainMenuButton.TabIndex = 24;
             this.mainMenuButton.Text = "Main Menu";
             this.mainMenuButton.UseVisualStyleBackColor = true;
             this.mainMenuButton.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(12, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(70, 26);
+            this.logoutButton.TabIndex = 25;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
             // 
             // blackBoxTesterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(375, 382);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.mainMenuButton);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -152,5 +164,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button mainMenuButton;
+        private System.Windows.Forms.Button logoutButton;
     }
 }

@@ -36,13 +36,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.displaySourceCode = new System.Windows.Forms.TextBox();
             this.displaySourceCodeButton = new System.Windows.Forms.Button();
+            this.logoutButton = new System.Windows.Forms.Button();
+            this.reOpenBugButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(12, 22);
+            this.button6.Location = new System.Drawing.Point(705, 12);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(75, 23);
+            this.button6.Size = new System.Drawing.Size(80, 28);
             this.button6.TabIndex = 25;
             this.button6.Text = "Main Menu";
             this.button6.UseVisualStyleBackColor = true;
@@ -77,7 +79,7 @@
             // 
             // deleteBugID
             // 
-            this.deleteBugID.Location = new System.Drawing.Point(272, 448);
+            this.deleteBugID.Location = new System.Drawing.Point(165, 448);
             this.deleteBugID.Name = "deleteBugID";
             this.deleteBugID.Size = new System.Drawing.Size(35, 20);
             this.deleteBugID.TabIndex = 31;
@@ -85,7 +87,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(223, 452);
+            this.label2.Location = new System.Drawing.Point(116, 452);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 32;
@@ -110,11 +112,33 @@
             this.displaySourceCodeButton.UseVisualStyleBackColor = true;
             this.displaySourceCodeButton.Click += new System.EventHandler(this.displaySourceCodeButton_Click);
             // 
+            // logoutButton
+            // 
+            this.logoutButton.Location = new System.Drawing.Point(12, 12);
+            this.logoutButton.Name = "logoutButton";
+            this.logoutButton.Size = new System.Drawing.Size(75, 23);
+            this.logoutButton.TabIndex = 35;
+            this.logoutButton.Text = "Logout";
+            this.logoutButton.UseVisualStyleBackColor = true;
+            this.logoutButton.Click += new System.EventHandler(this.logoutButton_Click);
+            // 
+            // reOpenBugButton
+            // 
+            this.reOpenBugButton.Location = new System.Drawing.Point(213, 439);
+            this.reOpenBugButton.Name = "reOpenBugButton";
+            this.reOpenBugButton.Size = new System.Drawing.Size(105, 36);
+            this.reOpenBugButton.TabIndex = 36;
+            this.reOpenBugButton.Text = "Re-Open Bug";
+            this.reOpenBugButton.UseVisualStyleBackColor = true;
+            this.reOpenBugButton.Click += new System.EventHandler(this.reOpenBugButton_Click);
+            // 
             // archivedBugsForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(797, 490);
+            this.Controls.Add(this.reOpenBugButton);
+            this.Controls.Add(this.logoutButton);
             this.Controls.Add(this.displaySourceCodeButton);
             this.Controls.Add(this.displaySourceCode);
             this.Controls.Add(this.label2);
@@ -140,5 +164,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox displaySourceCode;
         private System.Windows.Forms.Button displaySourceCodeButton;
+        private System.Windows.Forms.Button logoutButton;
+        private System.Windows.Forms.Button reOpenBugButton;
     }
 }

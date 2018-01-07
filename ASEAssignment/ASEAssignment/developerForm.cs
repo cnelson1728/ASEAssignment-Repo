@@ -118,7 +118,7 @@ namespace ASEAssignment
                     if (chosenBugDisplayBox.Items.Count == 0) // If the list box contains no data the user has entered a bug ID that doesn't match a record in the table
                     {
 
-                        MessageBox.Show("No matching records. Please enter a valid Bug ID.");
+                        MessageBox.Show("No matching records. Please enter a valid Bug ID.", "Alert");
                         chosenBugIDBox.Text = String.Empty;
 
                     }
@@ -126,7 +126,7 @@ namespace ASEAssignment
                 else
                 {
 
-                    MessageBox.Show("Please enter a Bug ID.");
+                    MessageBox.Show("Please enter a Bug ID.", "Alert");
 
                 }
             }
@@ -134,7 +134,7 @@ namespace ASEAssignment
             {
 
                 chosenBugIDBox.Text = String.Empty;
-                MessageBox.Show("Please enter an integer for Bug ID.");
+                MessageBox.Show("Please enter an integer for Bug ID.", "Alert");
 
             }
 
@@ -164,9 +164,8 @@ namespace ASEAssignment
                         myConnection.Open();
                         command.ExecuteNonQuery();
                         myConnection.Close();
-                        MessageBox.Show("Bug deleted successfully");
-                        chosenBugDisplayBox.Items.Clear();
-                        chosenBugIDBox.Text = String.Empty;
+                        MessageBox.Show("Bug deleted successfully" , "Success");
+                        
 
                     }
                 }
@@ -174,10 +173,18 @@ namespace ASEAssignment
             else
             {
 
-                MessageBox.Show("Please enter a valid Bug ID to delete.");
+                MessageBox.Show("Please enter a valid Bug ID to delete.", "Alert");
                 chosenBugIDBox.Text = String.Empty;
 
             }
+
+            fixerNameTextBox.Text = String.Empty;
+            fixDateTextBox.Text = String.Empty;
+            commentTextBox.Text = String.Empty;
+            editSourceCodeTextBox.Text = String.Empty;
+            chosenBugDisplayBox.Items.Clear();
+            chosenBugIDBox.Text = String.Empty;
+            displayBugs();
         }
 
         /// <summary>
@@ -248,14 +255,15 @@ namespace ASEAssignment
                 editSourceCodeTextBox.Text = String.Empty;
                 chosenBugDisplayBox.Items.Clear();
                 sourceCodeWebBrowser.DocumentText = "";
+                displayBugs();
 
-                MessageBox.Show("Bug archived successfully.");
+                MessageBox.Show("Bug archived successfully.", "Success");
 
             }
             else
             {
 
-                MessageBox.Show("Please fill out all fields.");
+                MessageBox.Show("Please fill out all fields.", "Alert");
 
             }
         }
@@ -281,6 +289,15 @@ namespace ASEAssignment
             this.Hide();
             archivedBugsForm ABF = new archivedBugsForm();
             ABF.ShowDialog();
+
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            loginPage LP = new loginPage();
+            LP.ShowDialog();
 
         }
     }

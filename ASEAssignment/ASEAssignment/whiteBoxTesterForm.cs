@@ -85,7 +85,7 @@ namespace ASEAssignment
 
         /// <summary>
         /// Button to implement the updateRecord method
-        /// Runs if all applicable text boxes
+        /// Runs if all applicable text boxes have been filled out
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
@@ -110,13 +110,13 @@ namespace ASEAssignment
                     lineNumberTextBox.Text = String.Empty;
                     codeAuthorTextBox.Text = String.Empty;
 
-                    MessageBox.Show("Bug updated successfully.");
+                    MessageBox.Show("Bug updated successfully.", "Success");
 
                 }
                 else
                 {
 
-                    MessageBox.Show("Please fill out all fields.");
+                    MessageBox.Show("Please fill out all fields.", "Alert");
 
                 }
 
@@ -125,7 +125,7 @@ namespace ASEAssignment
             {
 
                 lineNumberTextBox.Text = String.Empty;
-                MessageBox.Show("Please enter an integer for Line Number.");
+                MessageBox.Show("Please enter an integer for Line Number.", "Alert");
 
             }
         }
@@ -195,7 +195,7 @@ namespace ASEAssignment
                     if(appNameTextBox.Text == String.Empty) // If the user has entered a number but no record is displayed then the ID doesn't match a record in the table
                     {
 
-                        MessageBox.Show("No matching records. Please enter a valid Bug ID.");
+                        MessageBox.Show("No matching records. Please enter a valid Bug ID.", "Alert");
                         bugIDtextBox.Text = String.Empty;
 
                     }
@@ -203,7 +203,7 @@ namespace ASEAssignment
                 else
                 {
 
-                    MessageBox.Show("Please enter a Bug ID.");
+                    MessageBox.Show("Please enter a Bug ID.", "Alert");
 
                 }
             }
@@ -211,10 +211,19 @@ namespace ASEAssignment
             {
 
                 bugIDtextBox.Text = String.Empty;
-                MessageBox.Show("Please enter an integer for Bug ID.");
+                MessageBox.Show("Please enter an integer for Bug ID." , "Alert");
 
             }
             
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            loginPage LP = new loginPage();
+            LP.ShowDialog();
+
         }
     }
 }

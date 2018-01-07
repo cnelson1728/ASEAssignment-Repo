@@ -67,6 +67,18 @@
     <Compile Include="developerForm.Designer.cs">
       <DependentUpon>developerForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="registerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="registerForm.Designer.cs">
+      <DependentUpon>registerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="loginPage.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="loginPage.Designer.cs">
+      <DependentUpon>loginPage.cs</DependentUpon>
+    </Compile>
     <Compile Include="mainMenu.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,6 +102,9 @@
     <EmbeddedResource Include="developerForm.resx">
       <DependentUpon>developerForm.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="loginPage.resx">
+      <DependentUpon>loginPage.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="mainMenu.resx">
       <DependentUpon>mainMenu.cs</DependentUpon>
     </EmbeddedResource>
@@ -102,6 +117,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="registerForm.resx">
+      <DependentUpon>registerForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="whiteBoxTesterForm.resx">
       <DependentUpon>whiteBoxTesterForm.cs</DependentUpon>
     </EmbeddedResource>

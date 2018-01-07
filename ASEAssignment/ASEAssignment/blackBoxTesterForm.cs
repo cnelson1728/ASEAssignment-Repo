@@ -67,15 +67,24 @@ namespace ASEAssignment
                 appNameTextBox.Text = String.Empty;
                 causeOfBugTextBox.Text = String.Empty;
                 symptomTextBox.Text = String.Empty;
-                MessageBox.Show("Bug submitted successfully.");
+                MessageBox.Show("Bug submitted successfully.", "Success");
 
             }
             else
             {
 
-                MessageBox.Show("Please fill out all fields.");
+                MessageBox.Show("Please fill out all fields.", "Alert");
 
             }
+        }
+
+        private void logoutButton_Click(object sender, EventArgs e)
+        {
+
+            this.Hide();
+            loginPage LP = new loginPage();
+            LP.ShowDialog();
+
         }
     }
 }
